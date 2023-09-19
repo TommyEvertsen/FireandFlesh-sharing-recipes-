@@ -12,6 +12,7 @@ class Recipe extends Model
 
     protected $fillable = [
         'message',
+        'title',
     ];
 
     public function user(): BelongsTo

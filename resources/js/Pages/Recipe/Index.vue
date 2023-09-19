@@ -10,6 +10,13 @@
                     })
                 "
             >
+                <input
+                    v-model="form.title"
+                    placeholder="Name of your recipe"
+                    class="block w-full mb-4 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                />
+                <InputError :message="form.errors.title" class="mt-2" />
+
                 <textarea
                     v-model="form.message"
                     placeholder="Please share you recipe with the world!"

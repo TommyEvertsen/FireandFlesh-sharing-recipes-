@@ -36,7 +36,8 @@ class RecipeController extends Controller
     {
         //
         $validated = $request->validate([
-            'message' => 'required|string|max:255',
+            'message' => 'required|string',
+            'title' => 'required|string',
         ]);
 
         $request->user()->recipes()->create($validated);
