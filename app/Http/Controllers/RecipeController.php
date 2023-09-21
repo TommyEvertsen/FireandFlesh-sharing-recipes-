@@ -37,7 +37,8 @@ class RecipeController extends Controller
         //
         $validated = $request->validate([
             'message' => 'required|string',
-            'title' => 'required|string',
+            'title' => 'required|string|max:40',
+            'ingridients' => 'required|string',
         ]);
 
         $request->user()->recipes()->create($validated);
@@ -50,8 +51,8 @@ class RecipeController extends Controller
      */
     public function show(Recipe $recipe)
     {
-        //
-    }
+    //
+}
 
     /**
      * Show the form for editing the specified resource.
@@ -64,16 +65,33 @@ class RecipeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Recipe $recipe)
+    public function update(Request $request, Recipe $recipe): RedirectResponse
     {
         //
+        $this->authorize('update', $recipe);
+
+        $validated = $request->validate([
+            'message' => 'required|string',
+            'title' => 'required|string',
+            'ingridients' => 'required|string',
+        ]);
+
+        $recipe->update($validated);
+
+        return redirect(route('recipe.index'));
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Recipe $recipe)
+    public function destroy(Recipe $recipe): RedirectResponse
     {
         //
+
+        $this->authorize('delete', $recipe);
+
+        $recipe->delete();
+
+        return redirect(route('recipe.index'));
     }
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\RecipeController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Models\Recipe;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +32,17 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::resource('recipe', RecipeController::class)
-    ->only(['index', 'store'])
+    ->only(['index', 'store', 'update', 'destroy'])
     ->middleware(['auth', 'verified']);
+
+Route::get('/myrecipes', function() {
+    return Inertia::render('Recipe/MyRecipes', [
+        'recipes' => Recipe::where('user_id', auth()->id())->with('user:id,name')->latest()->get()]);
+})->middleware(['auth', 'verified'])->name('myrecipes');
+
+Route::get('createrecipe', function(){
+    return Inertia::render('Recipe/CreateRecipe');
+})->middleware(['auth', 'verified'])->name('createrecipe');
+
 
 require __DIR__ . '/auth.php';

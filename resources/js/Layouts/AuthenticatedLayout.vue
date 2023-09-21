@@ -28,22 +28,14 @@ const showingNavigationDropdown = ref(false);
                             </div>
 
                             <!-- Navigation Links -->
-                            <div
-                                class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex"
-                            >
-                                <NavLink
-                                    :href="route('dashboard')"
-                                    :active="route().current('dashboard')"
-                                >
-                                    Dashboard
-                                </NavLink>
+                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" >
 
-                                <NavLink
-                                    :href="route('recipe.index')"
-                                    :active="route().current('recipe.index')"
-                                >
-                                    Recipes
-                                </NavLink>
+                                <NavLink :href="route('dashboard')" :active="route().current('dashboard')"> Home </NavLink>
+                                <NavLink :href="route('createrecipe')" :active="route().current('createrecipe')" >Add new recipe</NavLink>
+                                <NavLink :href="route('recipe.index')" :active="route().current('recipe.index')" > Recipes</NavLink>
+                                <NavLink :href="route('myrecipes')" :active="route().current('myrecipes')" > My recipes </NavLink>
+                                
+
                             </div>
                         </div>
 
@@ -132,27 +124,14 @@ const showingNavigationDropdown = ref(false);
                 </div>
 
                 <!-- Responsive Navigation Menu -->
-                <div
-                    :class="{
-                        block: showingNavigationDropdown,
-                        hidden: !showingNavigationDropdown,
-                    }"
-                    class="sm:hidden"
-                >
+                <div :class="{ block: showingNavigationDropdown, hidden: !showingNavigationDropdown,}" class="sm:hidden">
                     <div class="pt-2 pb-3 space-y-1">
-                        <ResponsiveNavLink
-                            :href="route('dashboard')"
-                            :active="route().current('dashboard')"
-                        >
-                            Dashboard
-                        </ResponsiveNavLink>
 
-                        <ResponsiveNavLink
-                            :href="route('recipe.index')"
-                            :active="route().current('recipe.index')"
-                        >
-                            Chirps
-                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">Home</ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('createrecipe')" :active="route().current('createrecipe')">Add new recipe</ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('recipe.index')" :active="route().current('recipe.index')">Recipes</ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('myrecipes')" :active="route().current('myrecipes')">My recipes</ResponsiveNavLink>
+                    
                     </div>
 
                     <!-- Responsive Settings Options -->
@@ -167,13 +146,7 @@ const showingNavigationDropdown = ref(false);
                         </div>
 
                         <div class="mt-3 space-y-1">
-                            <ResponsiveNavLink
-                                :href="route('logout')"
-                                method="post"
-                                as="button"
-                            >
-                                Log Out
-                            </ResponsiveNavLink>
+                            <ResponsiveNavLink :href="route('logout')" method="post" as="button" > Log Out</ResponsiveNavLink>
                         </div>
                     </div>
                 </div>
@@ -190,6 +163,16 @@ const showingNavigationDropdown = ref(false);
             <main>
                 <slot />
             </main>
+
+            <!-- Footer -->
+            <!-- <footer class="bg-white shadow" v-if="$slots.footer">
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    <slot name="footer" />
+                </div>
+            </footer> -->
+
+
+
         </div>
     </div>
 </template>
