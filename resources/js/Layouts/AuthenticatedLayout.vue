@@ -12,10 +12,10 @@ const showingNavigationDropdown = ref(false);
 
 <template>
     <div>
-        <div class="min-h-screen bg-gray-100">
+        <div class="min-h-screen ">
             <nav class="bg-white border-b border-gray-100">
                 <!-- Primary Navigation Menu -->
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" >
                     <div class="flex justify-between h-16">
                         <div class="flex">
                             <!-- Logo -->
@@ -34,6 +34,7 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('createrecipe')" :active="route().current('createrecipe')" >Add new recipe</NavLink>
                                 <NavLink :href="route('recipe.index')" :active="route().current('recipe.index')" > Recipes</NavLink>
                                 <NavLink :href="route('myrecipes')" :active="route().current('myrecipes')" > My recipes </NavLink>
+                                <NavLink :href="route('randomrecipe')" :active="route().current('randomrecipe')" > Random recipe </NavLink>
                                 
 
                             </div>
@@ -131,6 +132,7 @@ const showingNavigationDropdown = ref(false);
                         <ResponsiveNavLink :href="route('createrecipe')" :active="route().current('createrecipe')">Add new recipe</ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('recipe.index')" :active="route().current('recipe.index')">Recipes</ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('myrecipes')" :active="route().current('myrecipes')">My recipes</ResponsiveNavLink>
+                       
                     
                     </div>
 
@@ -153,7 +155,7 @@ const showingNavigationDropdown = ref(false);
             </nav>
 
             <!-- Page Heading -->
-            <header class="bg-white shadow" v-if="$slots.header">
+            <header :style="{ 'background-color': 'rgb(221, 83, 83)'  }" class=" shadow " v-if="$slots.header">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     <slot name="header" />
                 </div>

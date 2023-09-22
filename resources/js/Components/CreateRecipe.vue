@@ -1,5 +1,9 @@
 <template>
-<div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
+
+    
+<div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8 mt-5" style="background-color: #F1EFEF; border-radius: 25px;">
+ 
+
     <h1 class="text-bold text-xl text-center mb-5">Add a new recipe</h1>
     <form @submit.prevent=" form.post(route('recipe.store'), { onSuccess: () => form.reset(), })">
 
@@ -49,6 +53,7 @@ import InputError from "@/Components/InputError.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import { useForm, Head } from "@inertiajs/vue3";
 import Recipe from "@/Components/Recipe.vue";
+import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 
 const form = useForm({
     message: "",

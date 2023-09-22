@@ -45,4 +45,10 @@ Route::get('createrecipe', function(){
 })->middleware(['auth', 'verified'])->name('createrecipe');
 
 
+Route::get('/randomrecipe', function() {
+    return Inertia::render('Recipe/RandomRecipe', [
+        'recipes' => [Recipe::with('user:id,name')->inRandomOrder()->first()]
+    ]);
+})->middleware(['auth', 'verified'])->name('randomrecipe');
+
 require __DIR__ . '/auth.php';

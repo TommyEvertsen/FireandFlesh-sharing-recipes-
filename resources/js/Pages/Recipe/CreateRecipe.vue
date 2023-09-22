@@ -2,19 +2,15 @@
 
 <AuthenticatedLayout >
 
+    <template #header>
+            <h2 class="font-semibold text-xl text-white leading-tight">Add new recipe</h2>
+        </template>
+    
     <CreateRecipe 
     
     />
 
-
-
 </AuthenticatedLayout>
-
-
-
-
-
-
 
 
 </template>
@@ -26,3 +22,4 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 
 defineProps(["recipes"]);
 </script>
+

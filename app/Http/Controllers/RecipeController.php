@@ -51,8 +51,8 @@ class RecipeController extends Controller
      */
     public function show(Recipe $recipe)
     {
-    //
-}
+        //
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -94,4 +94,7 @@ class RecipeController extends Controller
 
         return redirect(route('recipe.index'));
     }
+
+   
+
 }

@@ -1,11 +1,21 @@
 <script setup>
-const props = defineProps(["recipe"]);
+const props = defineProps(["recipe", "userHasLiked"]);
 
 const form = useForm({
     message: props.recipe.message,
     title: props.recipe.title,
     ingridients: props.recipe.ingridients,
 });
+
+let like = ref(0)
+let haveClicked = ref(false)
+
+const clickLike = () => {
+    if(!haveClicked.value) {
+        like.value ++; 
+        haveClicked.value = true;
+    }   
+}
 
 const editing = ref(false);
 
@@ -19,11 +29,12 @@ import DropdownLink from '@/Components/DropdownLink.vue';
 import { useForm } from "@inertiajs/vue3";
 import { ref } from "vue";
 
+
 dayjs.extend(relativeTime);
 </script>
 
 <template>
-    <div class="p-6 flex space-x-2">
+    <div class="p-6 flex space-x-2 mb-5 " style="background-color: #F1EFEF; border-radius: 25px;" >
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 -scale-x-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" >
             <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /> </svg>
 
@@ -104,7 +115,10 @@ dayjs.extend(relativeTime);
                 <p class="mt-4 text-md text-gray-900 break-words" id="howToCook">{{ recipe.message }}</p>
 
                 
-            </div>
+
+            </div> <br> <br>
+            <PrimaryButton class="mt-4 ml-1 mb-1" @click="clickLike" :disabled="userHasLiked || haveClicked.value">Like</PrimaryButton>
+            <p >This recipe has {{ like }} likes</p>
             
          
         </div>
