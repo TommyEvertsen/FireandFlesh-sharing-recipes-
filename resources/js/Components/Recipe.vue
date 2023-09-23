@@ -1,20 +1,25 @@
 <script setup>
-const props = defineProps(["recipe", "userHasLiked"]);
+const props = defineProps(["recipe"]);
 
 const form = useForm({
     message: props.recipe.message,
     title: props.recipe.title,
     ingridients: props.recipe.ingridients,
+    likes: props.recipe.likes
 });
 
-let like = ref(0)
-let haveClicked = ref(false)
-
-const clickLike = () => {
-    if(!haveClicked.value) {
-        like.value ++; 
-        haveClicked.value = true;
-    }   
+const clickLike = async () => {
+    try {
+        const response = await axios.post(`/recipes/${props.recipe.id}/like`);
+        if (response.data.success) {
+            props.recipe.likes = response.data.likes;
+            console.log(`Updated likes: ${props.recipe.likes}`);
+        } else {
+            console.error('Failed to like the recipe.');
+        }
+    } catch (error) {
+        console.error('An error occurred while liking the recipe:', error);
+    }
 }
 
 const editing = ref(false);
@@ -25,9 +30,12 @@ import Dropdown from "@/Components/Dropdown.vue";
 import InputError from "@/Components/InputError.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import DropdownLink from '@/Components/DropdownLink.vue';
+import RecipeButton from "./RecipeButton.vue";
 
 import { useForm } from "@inertiajs/vue3";
 import { ref } from "vue";
+import axios from 'axios';
+
 
 
 dayjs.extend(relativeTime);
@@ -113,12 +121,18 @@ dayjs.extend(relativeTime);
 
                 <label for="howToCook" class="font-bold text-lg" >How to cook</label>
                 <p class="mt-4 text-md text-gray-900 break-words" id="howToCook">{{ recipe.message }}</p>
+                
+                <br>
+
+               
+                <p class="mt-4 text-md text-gray-900 break-words" id="howToCook">This recipe has {{ recipe.likes }} likes</p>
+
 
                 
-
-            </div> <br> <br>
-            <PrimaryButton class="mt-4 ml-1 mb-1" @click="clickLike" :disabled="userHasLiked || haveClicked.value">Like</PrimaryButton>
-            <p >This recipe has {{ like }} likes</p>
+                <RecipeButton @click="clickLike" class="mt-4  mb-1">Like</RecipeButton>
+            </div> 
+            
+            
             
          
         </div>

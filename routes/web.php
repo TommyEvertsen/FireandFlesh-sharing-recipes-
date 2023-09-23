@@ -51,4 +51,6 @@ Route::get('/randomrecipe', function() {
     ]);
 })->middleware(['auth', 'verified'])->name('randomrecipe');
 
+Route::post('/recipes/{recipe}/like', [RecipeController::class, 'like'])->name('recipe.like');
+
 require __DIR__ . '/auth.php';

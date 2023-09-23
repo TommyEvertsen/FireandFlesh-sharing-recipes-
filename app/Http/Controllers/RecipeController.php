@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Recipe;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\DB;
 
 class RecipeController extends Controller
 {
@@ -95,6 +97,20 @@ class RecipeController extends Controller
         return redirect(route('recipe.index'));
     }
 
-   
+    public function like(Recipe $recipe): JsonResponse
+    {
+       
+        $this->authorize('update', $recipe); 
+    
+        
+        DB::transaction(function () use ($recipe) {
+            $recipe->increment('likes');
+        });
+
+        $recipe->refresh();
+    
+       
+        return response()->json(['success' => true, 'likes' => $recipe->likes]);
+    }
 
 }
