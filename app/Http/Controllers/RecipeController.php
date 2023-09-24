@@ -99,17 +99,15 @@ class RecipeController extends Controller
 
     public function like(Recipe $recipe): JsonResponse
     {
-       
-        $this->authorize('update', $recipe); 
-    
-        
+
+
         DB::transaction(function () use ($recipe) {
             $recipe->increment('likes');
         });
 
         $recipe->refresh();
-    
-       
+
+
         return response()->json(['success' => true, 'likes' => $recipe->likes]);
     }
 

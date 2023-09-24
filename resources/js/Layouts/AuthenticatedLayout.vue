@@ -35,6 +35,7 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('recipe.index')" :active="route().current('recipe.index')" > Recipes</NavLink>
                                 <NavLink :href="route('myrecipes')" :active="route().current('myrecipes')" > My recipes </NavLink>
                                 <NavLink :href="route('randomrecipe')" :active="route().current('randomrecipe')" > Random recipe </NavLink>
+                                <NavLink :href="route('mostpopular')" :active="route().current('mostpopular')" > Most popular recipes </NavLink>
                                 
 
                             </div>
@@ -132,6 +133,7 @@ const showingNavigationDropdown = ref(false);
                         <ResponsiveNavLink :href="route('createrecipe')" :active="route().current('createrecipe')">Add new recipe</ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('recipe.index')" :active="route().current('recipe.index')">Recipes</ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('myrecipes')" :active="route().current('myrecipes')">My recipes</ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('mostpopular')" :active="route().current('mostpopular')">Most popular recipes</ResponsiveNavLink>
                        
                     
                     </div>
