@@ -48,12 +48,13 @@ defineProps({
                     class="ml-4 font-semibold text-white hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
                     >Register</Link
                 >
-
                 <Link
+                    v-if="canRegister"
                     :href="route('news')"
                     class="ml-4 font-semibold text-white hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
                     >News</Link
                 >
+               
             </template>
         </div>
 

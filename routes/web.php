@@ -61,8 +61,8 @@ Route::get('/mostpopular', function(){
     ]);
 })->middleware(['auth', 'verified'])->name('mostpopular');
 
-Route::get('/news', function(){
-   return Inertia::render('Recipe/News')->name('news');
-});
+Route::get('/news', function () {
+    return Inertia::render('Recipe/News');
+})->name('news');
 
 require __DIR__ . '/auth.php';

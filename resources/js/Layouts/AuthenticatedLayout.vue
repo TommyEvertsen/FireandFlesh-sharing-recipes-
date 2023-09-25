@@ -32,10 +32,11 @@ const showingNavigationDropdown = ref(false);
 
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')"> Home </NavLink>
                                 <NavLink :href="route('createrecipe')" :active="route().current('createrecipe')" >Add new recipe</NavLink>
-                                <NavLink :href="route('recipe.index')" :active="route().current('recipe.index')" > Recipes</NavLink>
+                                <NavLink :href="route('recipe.index')" :active="route().current('recipe.index')" >All recipes</NavLink>
                                 <NavLink :href="route('myrecipes')" :active="route().current('myrecipes')" > My recipes </NavLink>
                                 <NavLink :href="route('randomrecipe')" :active="route().current('randomrecipe')" > Random recipe </NavLink>
                                 <NavLink :href="route('mostpopular')" :active="route().current('mostpopular')" > Most popular recipes </NavLink>
+                                
                                 
 
                             </div>
