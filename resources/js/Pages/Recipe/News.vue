@@ -1,4 +1,10 @@
+
+
 <template>
+
+<FrontPageLayout>
+
+
 
 
     <div class="max-w-5xl mx-auto sm:px-6 lg:px-8 text-xl font-serif" >
@@ -14,10 +20,13 @@
                     </div>
                     
                 </div>
-            </div>
+    </div>
+    
+</FrontPageLayout>
 </template>
+
 
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-
+import FrontPageLayout from '@/Layouts/FrontPageLayout.vue';
 </script>
