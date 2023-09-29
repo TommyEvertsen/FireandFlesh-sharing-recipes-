@@ -7,23 +7,23 @@ import { Head } from '@inertiajs/vue3';
 <template>
     <Head title="Dashboard" />
 
-    <AuthenticatedLayout>
-        <template #header>
+    <AuthenticatedLayout class="foodPictureDashboard">
+        <!-- <template #header>
             <h2 class="font-semibold text-xl text-white leading-tight">Home</h2>
-        </template>
+        </template> -->
 
         <div class="py-12">
-            <div class="max-w-2xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="p-6 text-gray-900 text-center" style="background-color: #F1EFEF; ">You're logged in as  {{ $page.props.auth.user.name }}</div>
+            <div class="max-w-2xl mx-auto sm:px-6 lg:px-8 ">
+                <div class=" overflow-hidden shadow-sm sm:rounded-lg ">
+                    <div class="p-3 text-center text-white text-xl font-serif">Welcome  {{ $page.props.auth.user.name }}</div>
                 </div>
             </div>
         </div>
 
         <div>
-            <div class="max-w-5xl mx-auto sm:px-6 lg:px-8 text-xl font-serif" >
-                <div class="bg-white overflow-hidden ">
-                    <div class="p-6 text-gray-900 text-center break-words">
+            <div class="max-w-5xl mx-auto sm:px-6 lg:px-8 text-xl font-serif " >
+                <div class=" overflow-hidden ">
+                    <div class="p-6 text-white text-center break-words">
                        <p> They say "We eat with our eyes"</p>
                        <p class="">And while that may be true, for me eating should be like an adventure. </p>
                         <p class="mt-5"> I remember i used to 
@@ -41,5 +41,13 @@ import { Head } from '@inertiajs/vue3';
 </template>
 
 <style>
+
+.foodPictureDashboard{
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),  
+        url("/resources/images/pexels-lumn-351961.jpg");
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center center; }
 
 </style>
