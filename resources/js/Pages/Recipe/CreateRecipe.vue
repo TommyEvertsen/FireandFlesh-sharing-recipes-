@@ -1,6 +1,6 @@
 <template>
 
-<AuthenticatedLayout >
+<AuthenticatedLayout class="foodPictureCreate">
 
     <template #header>
             <h2 class="font-semibold text-xl text-white leading-tight">Add new recipe</h2>
@@ -23,3 +23,14 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 defineProps(["recipes"]);
 </script>
 
+<style>
+
+.foodPictureCreate{
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),  
+        url("/resources/images/pexels-ian-turnell-709567.jpg");
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center center; }
+
+</style>
