@@ -100,19 +100,18 @@ class RecipeController extends Controller
     public function like(Recipe $recipe): JsonResponse
 {
     $userId = auth()->id();
+    $alreadyLiked = DB::table('likes')->where('user_id', $userId)->where('recipe_id', $recipe->id)->exists();
 
-    //Check if the user is trying to like their own recipe
+   
     if ($recipe->user_id === $userId) {
         return response()->json(['error' => 'You cannot like your own recipe.'], 403);
     }
 
-    $alreadyLiked = DB::table('likes')->where('user_id', $userId)->where('recipe_id', $recipe->id)->exists();
 
     if (!$alreadyLiked) {
         DB::transaction(function () use ($recipe, $userId) {
             $recipe->increment('likes');
             
-            // Saving the like to the database
             DB::table('likes')->insert([
                 'user_id' => $userId,
                 'recipe_id' => $recipe->id
