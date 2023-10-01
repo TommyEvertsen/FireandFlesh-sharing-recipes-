@@ -13,9 +13,9 @@ return new class () extends Migration {
         Schema::create('recipes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->string('message');
+            $table->longText('message');
             $table->string('title');
-            $table->string('ingridients');
+            $table->longText('ingridients');
             $table->integer('likes')->default(0);
             $table->timestamps();
         });
