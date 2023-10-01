@@ -45,6 +45,6 @@ defineProps(["recipes"]);
         url("/resources/images/Optimized-pexels-engin-akyurt-1435735.jpg");
     background-size: cover; 
     background-repeat: no-repeat; 
-    background-position: center center; }
+    background-position: center center;  }
 
 </style>
