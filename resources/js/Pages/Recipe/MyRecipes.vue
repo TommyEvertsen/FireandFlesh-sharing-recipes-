@@ -1,6 +1,6 @@
 <template>
 
-<AuthenticatedLayout >
+<AuthenticatedLayout class="foodPictureMy">
 
   <template #header>
             <h2 class="font-semibold text-xl text-white leading-tight">My recipes</h2>
@@ -36,3 +36,15 @@ defineProps(["recipes"]);
 
 
 </script>
+
+<style>
+
+.foodPictureMy{
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),  
+        url("/resources/images/Optimized-pexels-engin-akyurt-1435735.jpg");
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center center; }
+
+</style>

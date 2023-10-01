@@ -15,7 +15,7 @@ import { Head } from '@inertiajs/vue3';
         <div class="py-12">
             <div class="max-w-2xl mx-auto sm:px-6 lg:px-8 ">
                 <div class=" overflow-hidden shadow-sm sm:rounded-lg ">
-                    <div class="p-3 text-center text-white text-xl font-serif">Welcome  {{ $page.props.auth.user.name }}</div>
+                    <div class="p-3 text-center text-white text-2xl font-serif">Welcome  {{ $page.props.auth.user.name }}</div>
                 </div>
             </div>
         </div>
@@ -45,7 +45,7 @@ import { Head } from '@inertiajs/vue3';
 .foodPictureDashboard{
     background: 
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),  
-        url("/resources/images/pexels-lumn-351961.jpg");
+        url("/resources/images/Optimized-pexels-lumn-351961.jpg");
     background-size: cover; 
     background-repeat: no-repeat; 
     background-position: center center; }

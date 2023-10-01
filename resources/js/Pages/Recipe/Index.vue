@@ -39,7 +39,7 @@ defineProps(["recipes"]);
 .foodPicture{
     background: 
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),  
-        url("/resources/images/pexels-markus-spiske-2818573.jpg");
+        url("/resources/images/Optimized-pexels-markus-spiske-2818573.jpg");
     background-size: cover; 
     background-repeat: no-repeat; 
     background-position: center center; }

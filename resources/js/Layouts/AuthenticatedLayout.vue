@@ -19,13 +19,7 @@ const showingNavigationDropdown = ref(false);
                     <div class="flex justify-between h-16">
                         <div class="flex">
                             <!-- Logo -->
-                            <div class="shrink-0 flex items-center">
-                                <Link :href="route('dashboard')">
-                                    <ApplicationLogo
-                                        class="block h-9 w-auto fill-current text-gray-800"
-                                    />
-                                </Link>
-                            </div>
+                            
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" >
@@ -134,6 +128,7 @@ const showingNavigationDropdown = ref(false);
                         <ResponsiveNavLink :href="route('createrecipe')" :active="route().current('createrecipe')">Add new recipe</ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('recipe.index')" :active="route().current('recipe.index')">Recipes</ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('myrecipes')" :active="route().current('myrecipes')">My recipes</ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('randomrecipe')" :active="route().current('randomrecipe')">Random recipes</ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('mostpopular')" :active="route().current('mostpopular')">Most popular recipes</ResponsiveNavLink>
                        
                     

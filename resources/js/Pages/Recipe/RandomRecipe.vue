@@ -1,5 +1,5 @@
 <template>
-<AuthenticatedLayout>
+<AuthenticatedLayout class="foodPictureRandom">
     <template #header >
             <h2 class="font-semibold text-xl text-white leading-tight" >Random recipe</h2>
         </template>
@@ -32,3 +32,16 @@ import PrimaryButton from "@/Components/PrimaryButton.vue";
 
 defineProps(["recipes"]);
 </script>
+
+
+<style>
+
+.foodPictureRandom{
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),  
+        url("/resources/images/Optimized-pexels-sherali-khan-10156672.jpg");
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center center; }
+
+</style>
