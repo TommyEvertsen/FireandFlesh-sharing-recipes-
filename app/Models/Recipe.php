@@ -18,9 +18,9 @@ class Recipe extends Model
         'likes',
     ];
 
-    protected $dispatchesEvents = [
-        'created' => RecipeCreated::class,
-    ];
+    /*   protected $dispatchesEvents = [
+          'created' => RecipeCreated::class,
+      ]; */
 
     public function user(): BelongsTo
     {
@@ -28,5 +28,5 @@ class Recipe extends Model
     }
 
 
-    
+
 }
