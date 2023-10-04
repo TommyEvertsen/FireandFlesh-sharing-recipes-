@@ -1,6 +1,6 @@
 <template>
 
-<AuthenticatedLayout class="foodPictureMy">
+<AuthenticatedLayout class="">
 
   <template #header>
             <h2 class="font-semibold text-xl text-white leading-tight">My recipes</h2>

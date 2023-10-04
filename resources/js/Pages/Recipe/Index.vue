@@ -5,7 +5,7 @@
         <template #header >
             <h2 class="font-semibold text-xl text-white leading-tight" >Recipes</h2>
         </template>
-        <div class="foodPicture">
+        <div class="">
         <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
             <div class="">
                 <Recipe
