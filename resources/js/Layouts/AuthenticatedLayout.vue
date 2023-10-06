@@ -13,7 +13,7 @@ const showingNavigationDropdown = ref(false);
 <template>
     <div>
         <div class="min-h-screen ">
-            <nav class="bg-white border-b border-gray-100">
+            <nav class="" :style="{ 'background-color': 'rgb(221, 83, 83)'  }">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" >
                     <div class="flex justify-between h-16">
@@ -165,11 +165,11 @@ const showingNavigationDropdown = ref(false);
             </main>
 
             <!-- Footer -->
-            <!-- <footer class="bg-white shadow" v-if="$slots.footer">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+             <footer :style="{ 'background-color': 'rgb(221, 83, 83)' , 'text-align': 'center'  }" class="bg-white shadow " v-if="$slots.footer">
+                <div class="  py-6 px-4 ">
                     <slot name="footer" />
                 </div>
-            </footer> -->
+            </footer> 
 
 
 

@@ -1,15 +1,19 @@
 <template>
 
-<AuthenticatedLayout class="foodPictureCreate">
+<AuthenticatedLayout class="foodPictureCreate ">
 
-    <template #header>
+    <!-- <template #header>
             <h2 class="font-semibold text-xl text-white leading-tight">Add new recipe</h2>
-        </template>
+        </template> -->
     
+    <div>
     <CreateRecipe 
     
     />
+    </div>
 
+  
+        
 </AuthenticatedLayout>
 
 
@@ -31,6 +35,9 @@ defineProps(["recipes"]);
         url("/resources/images/Optimized-pexels-ian-turnell-709567.jpg");
     background-size: cover; 
     background-repeat: no-repeat; 
-    background-position: center center; }
+    background-position: center center; 
+    display: flex;
+  flex-direction: column;
+  min-height: 100vh; }
 
 </style>
