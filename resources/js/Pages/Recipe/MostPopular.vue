@@ -1,8 +1,9 @@
 <template>
 <AuthenticatedLayout >
-    <template #header>
+
+    <!-- <template #header>
             <h2 class="font-semibold text-xl text-white leading-tight">Most popular recipes</h2>
-        </template>
+        </template> -->
 
         <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
 
