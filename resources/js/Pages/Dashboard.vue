@@ -12,6 +12,7 @@ import { Head } from '@inertiajs/vue3';
             <h2 class="font-semibold text-xl text-white leading-tight">Home</h2>
         </template> -->
 
+    <template #main>
         <div class="py-12">
             <div class="max-w-2xl mx-auto sm:px-6 lg:px-8 ">
                 <div class=" overflow-hidden shadow-sm sm:rounded-lg ">
@@ -37,7 +38,9 @@ import { Head } from '@inertiajs/vue3';
                 </div>
             </div>
         </div>
-    </AuthenticatedLayout>
+    </template>
+
+</AuthenticatedLayout>
 </template>
 
 <style>

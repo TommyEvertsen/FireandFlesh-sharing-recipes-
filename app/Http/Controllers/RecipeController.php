@@ -98,32 +98,32 @@ class RecipeController extends Controller
     }
 
     public function like(Recipe $recipe): JsonResponse
-{
-    $userId = auth()->id();
-    $alreadyLiked = DB::table('likes')->where('user_id', $userId)->where('recipe_id', $recipe->id)->exists();
+    {
+        $userId = auth()->id();
+        $alreadyLiked = DB::table('likes')->where('user_id', $userId)->where('recipe_id', $recipe->id)->exists();
 
-   
-    if ($recipe->user_id === $userId) {
-        return response()->json(['error' => 'You cannot like your own recipe.'], 403);
+
+        if ($recipe->user_id === $userId) {
+            return response()->json(['error' => 'You cannot like your own recipe.'], 403);
+        }
+
+
+        if (!$alreadyLiked) {
+            DB::transaction(function () use ($recipe, $userId) {
+                $recipe->increment('likes');
+
+                DB::table('likes')->insert([
+                    'user_id' => $userId,
+                    'recipe_id' => $recipe->id
+                ]);
+            });
+
+            return response()->json(['success' => true, 'likes' => $recipe->likes]);
+        }
+
+        return response()->json(['error' => 'Recipe already liked.'], 409);
     }
 
 
-    if (!$alreadyLiked) {
-        DB::transaction(function () use ($recipe, $userId) {
-            $recipe->increment('likes');
-            
-            DB::table('likes')->insert([
-                'user_id' => $userId,
-                'recipe_id' => $recipe->id
-            ]);
-        });
 
-        return response()->json(['success' => true, 'likes' => $recipe->likes]);
-    }
-
-    return response()->json(['error' => 'Recipe already liked.'], 409);
-}
-
-       
-       
 }

@@ -6,11 +6,11 @@
             <h2 class="font-semibold text-xl text-white leading-tight">Add new recipe</h2>
         </template> -->
     
-    <div>
+    <template #main>
     <CreateRecipe 
     
     />
-    </div>
+    </template>
 
   
         

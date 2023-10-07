@@ -11,7 +11,7 @@ const showingNavigationDropdown = ref(false);
 </script>
 
 <template>
-    <div>
+    <div class="d-flex flex-column min-h-screen">
         <div class="min-h-screen ">
             <nav class="" :style="{ 'background-color': 'rgb(221, 83, 83)'  }">
                 <!-- Primary Navigation Menu -->
@@ -160,8 +160,8 @@ const showingNavigationDropdown = ref(false);
             </header>
 
             <!-- Page Content -->
-            <main>
-                <slot />
+            <main class="flex-grow">
+                <slot name="main"/>
             </main>
 
             <!-- Footer -->
@@ -176,3 +176,9 @@ const showingNavigationDropdown = ref(false);
         </div>
     </div>
 </template>
+
+<style>
+
+
+
+</style>
