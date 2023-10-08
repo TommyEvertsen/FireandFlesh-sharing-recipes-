@@ -122,7 +122,7 @@ const showingNavigationDropdown = ref(false);
 
                 <!-- Responsive Navigation Menu -->
                 <div :class="{ block: showingNavigationDropdown, hidden: !showingNavigationDropdown,}" class="sm:hidden">
-                    <div class="pt-2 pb-3 space-y-1">
+                    <div class="pt-2 pb-3 space-y-1 font-bold">
 
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">Home</ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('createrecipe')" :active="route().current('createrecipe')">Add new recipe</ResponsiveNavLink>

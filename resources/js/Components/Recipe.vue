@@ -24,6 +24,17 @@ const clickLike = async () => {
 
 const editing = ref(false);
 
+const isIngredientsExpanded = ref(false);
+const isMessageExpanded = ref(false);
+
+const truncateText = (text, limit = 80) => {
+    const words = text.split(" ");
+    if (words.length > limit) {
+        return words.slice(0, limit).join(" ") + "...";
+    }
+    return text;
+};
+
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import Dropdown from "@/Components/Dropdown.vue";
@@ -116,12 +127,17 @@ dayjs.extend(relativeTime);
                 <br />
 
                 <label for="ingredients" class="font-bold text-lg" >Ingredients</label>
-                <p id="ingredients" class="mt-4 text-md text-gray-900 break-words">{{ recipe.ingridients }}</p>
-                <br />
+                <p id="ingredients" class="mt-4 text-md text-gray-900 break-words">
+                {{ isIngredientsExpanded ? recipe.ingridients : truncateText(recipe.ingridients) }}
+                </p>
+                <button v-if="recipe.ingridients.split(' ').length > 100 && !isIngredientsExpanded" @click="isIngredientsExpanded = true" class="text-red-300">Read More</button>
+                <br> <br>
 
                 <label for="howToCook" class="font-bold text-lg" >How to cook</label>
-                <p class="mt-4 text-md text-gray-900 break-words" id="howToCook">{{ recipe.message }}</p>
-                
+                <p class="mt-4 text-md text-gray-900 break-words" id="howToCook">
+                {{ isMessageExpanded ? recipe.message : truncateText(recipe.message) }}
+                </p>
+                <button v-if="recipe.message.split(' ').length > 100 && !isMessageExpanded" @click="isMessageExpanded = true" class="text-red-300">Read More</button>
                 <br>
 
                

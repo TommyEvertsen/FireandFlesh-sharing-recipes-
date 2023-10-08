@@ -7,9 +7,12 @@
         </template> -->
     
     <template #main>
+        
     <CreateRecipe 
     
     />
+
+    
     </template>
 
   
@@ -32,7 +35,7 @@ defineProps(["recipes"]);
 .foodPictureCreate{
     background: 
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),  
-        url("/resources/images/Optimized-pexels-ian-turnell-709567.jpg");
+        url("/resources/images/pexels-sydney-troxell-718742.jpg");
     background-size: cover; 
     background-repeat: no-repeat; 
     background-position: center center; 
