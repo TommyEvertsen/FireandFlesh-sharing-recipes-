@@ -24,6 +24,7 @@ const clickLike = async () => {
 
 const editing = ref(false);
 
+//Legg til slik at teksen på oppskriftene ikke blir så lange
 const isIngredientsExpanded = ref(false);
 const isMessageExpanded = ref(false);
 
