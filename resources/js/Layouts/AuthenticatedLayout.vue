@@ -37,6 +37,7 @@ const showingNavigationDropdown = ref(false);
                         </div>
 
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
+
                             <!-- Settings Dropdown -->
                             <div class="ml-3 relative">
                                 <Dropdown align="right" width="48">
@@ -66,15 +67,27 @@ const showingNavigationDropdown = ref(false);
 
                                     <template #content>
                                         <DropdownLink
+                                            :href="route('profile')"
+                                            as="button"
+                                        >
+                                            My profile
+                                        </DropdownLink>
+
+                                        <DropdownLink
                                             :href="route('logout')"
                                             method="post"
                                             as="button"
                                         >
                                             Log Out
                                         </DropdownLink>
+
+                                        
                                     </template>
                                 </Dropdown>
                             </div>
+
+                            
+
                         </div>
 
                         <!-- Hamburger -->

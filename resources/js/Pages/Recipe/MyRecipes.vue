@@ -24,9 +24,9 @@
 
 
 
-<template #footer class="text-center">
+<!-- <template #footer class="text-center">
             <a href="github.com" class="font-semibold text-white leading-tight text-center" >Developed by Tommy Huynh Evertsen</a>
-        </template>
+        </template> -->
 </AuthenticatedLayout>
 
     

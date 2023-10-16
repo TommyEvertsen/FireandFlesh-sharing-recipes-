@@ -16,6 +16,7 @@
                        <p>23.09-23 Added My the like feature</p>
                        <p>24.09-23 Added the most popular recipes feature</p>
                        <p>25.09 Added the news feature</p>
+                       <p>16.10 Added achievemnts page</p>
                        
                     </div>
                     

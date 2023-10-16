@@ -32,6 +32,8 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+//Recipe routes
+
 Route::resource('recipe', RecipeController::class)
     ->only(['index', 'store', 'update', 'destroy'])
     ->middleware(['auth', 'verified']);
@@ -62,8 +64,15 @@ Route::get('/mostpopular', function(){
     ]);
 })->middleware(['auth', 'verified'])->name('mostpopular');
 
+//Other routes
+
 Route::get('/news', function () {
     return Inertia::render('Recipe/News');
 })->name('news');
+
+ Route::get('/profile', function(){
+    return Inertia::render('ProfilePage/Profile');
+})->middleware(['auth', 'verified'])->name('profile'); 
+
 
 require __DIR__ . '/auth.php';
