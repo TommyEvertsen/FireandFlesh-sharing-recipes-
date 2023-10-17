@@ -67,7 +67,7 @@ const showingNavigationDropdown = ref(false);
 
                                     <template #content>
                                         <DropdownLink
-                                            :href="route('profile')"
+                                        :href="route('profile.index')"
                                             as="button"
                                         >
                                             My profile

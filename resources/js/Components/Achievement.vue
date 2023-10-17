@@ -1,5 +1,12 @@
 <script setup>
-const props = defineProps(["achievement"]);
+const props = defineProps(["achievements"]);
+
+const form = useForm({
+   
+    title: props.achievements.title,
+    
+   
+});
 
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
@@ -25,6 +32,7 @@ dayjs.extend(relativeTime);
 
 
             <div >
+                <h1>{{ achievements.title }}</h1>
                
                 
 

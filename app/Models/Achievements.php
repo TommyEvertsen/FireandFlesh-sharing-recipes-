@@ -16,6 +16,9 @@ class Achievements extends Model
         'score',
         'title',
         'logo',
+        'icon',
+        'info',
+        
     ];
 
     public function user(): BelongsTo

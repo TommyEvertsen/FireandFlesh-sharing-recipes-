@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AchievementController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RecipeController;
 use Illuminate\Foundation\Application;
@@ -70,9 +71,13 @@ Route::get('/news', function () {
     return Inertia::render('Recipe/News');
 })->name('news');
 
- Route::get('/profile', function(){
+/*  Route::get('/profile', function(){
     return Inertia::render('ProfilePage/Profile');
-})->middleware(['auth', 'verified'])->name('profile'); 
+})->middleware(['auth', 'verified'])->name('profile');  */
+
+Route::resource('profile', AchievementController::class)
+    ->only(['index'])
+    ->middleware(['auth', 'verified']);
 
 
 require __DIR__ . '/auth.php';

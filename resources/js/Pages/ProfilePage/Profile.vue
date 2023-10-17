@@ -1,8 +1,10 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head, Link } from '@inertiajs/vue3';
+import Achievement from '@/Components/Achievement.vue';
 
 
+defineProps(["achievements"]);
 </script>
 
 <template>
@@ -22,8 +24,10 @@ import { Head, Link } from '@inertiajs/vue3';
 
         <!-- Achievements -->
         <div id="achievements">
-            
+            <h2>{{ achievements.title }}</h2>
 
+        
+          
         </div>
 
     </template>

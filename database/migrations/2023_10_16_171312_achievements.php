@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('icon')->nullable();
             $table->timestamp('timestamp')->default(now());
             $table->integer('score')->default(0);
-            $table->timestamps();
+           
 
            
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
