@@ -4,12 +4,11 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 use App\Models\Achievements;
+use App\Models\AchievementsV2;
+use App\Models\Trophy;
 
-class AchievementSeeder extends Seeder
+class AchievementSeederV2 extends Seeder
 {
     /**
      * Run the database seeds.
@@ -19,39 +18,36 @@ class AchievementSeeder extends Seeder
         $achievements = [
             [
                 'title' => 'First Like',
-                'user_id' => '0',
                 'info' => 'This achievement is unlocked by liking a recipe for the first time.',
-                'icon' => 'public/icons/like-icon.png',
+                'icon' => 'public/icons/cake-cup-color-icon.svg',
                 'score' => 10,
             ],
             [
                 'title' => 'Ten likes',
-                'user_id' => '0',
                 'info' => 'Great job liking 10 recipes, you made som people happy.',
-                'icon' => 'public/icons/like-icon.png',
+                'icon' => 'public/icons/chili-icon.svg',
                 'score' => 30,
             ],
 
             [
                 'title' => 'Created your first Recipe',
-                'user_id' => '0',
                 'info' => 'You created your first recipe, continiue sharing your recipes with the world.',
-                'icon' => 'public/icons/comment-icon.png',
+                'icon' => 'public/icons/crab-color-icon.svg',
                 'score' => 20,
             ],
             [
                 'title' => 'Created 10 recipec',
-                'user_id' => '0',
                 'info' => 'Hello Gordon Ramsay! You almost made a cook book by now.',
-                'icon' => 'public/icons/comment-icon.png',
+                'icon' => 'public/icons/green-grapes-icon.svg',
                 'score' => 50,
             ],
+
 
         ];
 
         foreach ($achievements as $achievement) {
-            Achievements::create($achievement);
+            Trophy::create($achievement);
         }
-    }
 
+    }
 }
