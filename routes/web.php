@@ -77,7 +77,7 @@ Route::get('/news', function () {
 })->middleware(['auth', 'verified'])->name('profile');  */
 
 Route::resource('profile', TrophyController::class)
-    ->only(['index'])
+    ->only(['index',])
     ->middleware(['auth', 'verified']);
 
     

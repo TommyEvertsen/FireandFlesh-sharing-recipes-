@@ -9,10 +9,11 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens;
+    use HasFactory;
+    use Notifiable;
 
 
 
@@ -52,6 +53,11 @@ class User extends Authenticatable
         return $this->hasMany(Recipe::class);
     }
 
+    public function avhievements(): HasMany
+    {
+        return $this->hasMany(Trophy::class);
+    }
 
-    
+
+
 }

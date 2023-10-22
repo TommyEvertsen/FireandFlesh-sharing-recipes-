@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Recipe;
 use App\Models\Trophy;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\DB;
-
-
 
 class TrophyController extends Controller
 {
@@ -18,13 +17,22 @@ class TrophyController extends Controller
      */
     public function index(): Response
     {
+
+
+
         $allAchievements = Trophy::all();
+        $recipe = Recipe::all();
+
+
+
 
         return Inertia::render('ProfilePage/Profile', [
-            'achievements' => $allAchievements
+            'achievements' => $allAchievements,
+            'recipe' => $recipe
+
         ]);
     }
-   
+
 
     /**
      * Show the form for creating a new resource.
